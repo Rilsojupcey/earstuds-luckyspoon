@@ -50,10 +50,10 @@ label{
 input,select{
   flex:1;
   padding:10px 12px;
-  border:1px solid var(--line);
+  border:1px solid #8090A8;
   border-radius:10px;
-  background:var(--page);
-  color:var(--ink);
+  background:#8090A8;
+  color:#FFFFFF;
   outline:none;
 }
 
@@ -67,9 +67,9 @@ button{
   width:100%;
   padding:12px 14px;
   border-radius:12px;
-  border:1px solid var(--line);
-  background:var(--box);
-  color:var(--ink);
+  border:1px solid #8090A8;
+  background:#8090A8;
+  color:#FFFFFF;
   font-size:16px;
 }
 
@@ -117,4 +117,5 @@ button:hover{
   padding:12px;
   background:var(--box);
   color:var(--ink);
+
 }
