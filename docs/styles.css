@@ -50,10 +50,10 @@ label{
 input,select{
   flex:1;
   padding:10px 12px;
-  border:1px solid #8090A8;
+  border:1px solid var(--line);
   border-radius:10px;
-  background:#8090A8;
-  color:#FFFFFF;
+  background:var(--page);
+  color:var(--ink);
   outline:none;
 }
 
@@ -119,4 +119,5 @@ button:hover{
   color:var(--ink);
 
 }
+
 
