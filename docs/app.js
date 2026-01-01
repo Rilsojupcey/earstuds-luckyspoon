@@ -277,11 +277,6 @@ async function runMatchGame(initialDraws, wishFruit, logBox){
   logLine(logBox, "完成对对碰数量 " + pairCount)
   logLine(logBox, "许愿奖励触发次数 " + wishBonusCount)
 
-  if(activeCards.length > 0){
-    logLine(logBox, "未配对残留 " + listLine())
-  }else{
-    logLine(logBox, "未配对残留 无")
-  }
 
   return totalDraws
 }
@@ -316,3 +311,4 @@ async function start(){
 
 initUI()
 el("startBtn").addEventListener("click", start);
+
