@@ -315,4 +315,4 @@ async function start(){
 }
 
 initUI()
-el("startBtn").addEventListener("click", start)
+el("startBtn").addEventListener("click", start);
