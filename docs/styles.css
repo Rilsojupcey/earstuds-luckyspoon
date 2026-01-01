@@ -89,9 +89,9 @@ button:hover{
   gap:8px;
   padding:6px 10px;
   border-radius:999px;
-  border:1px solid var(--line);
-  background:var(--box);
-  color:var(--ink);
+  border:1px solid #8090A8;
+  background:#8090A8;
+  color:#FFFFFF;
 }
 
 .tag input{
@@ -119,3 +119,4 @@ button:hover{
   color:var(--ink);
 
 }
+
