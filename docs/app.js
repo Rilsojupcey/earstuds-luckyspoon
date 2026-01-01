@@ -130,7 +130,6 @@ async function drawEarstuds(drawTimes, comboList, logBox){
   const poolSize = pool.length
 
   logLine(logBox, "抽耳钉开始")
-  logLine(logBox, "池子总数 " + poolSize)
 
   const allowRepeat = true
 
@@ -313,5 +312,6 @@ async function start(){
 
 initUI()
 el("startBtn").addEventListener("click", start);
+
 
 
