@@ -193,6 +193,7 @@ async function runMatchGame(initialDraws, wishFruit, logBox){
   let bonusDraws = 0
 
   for(let i=0;i<initialList.length;i++){
+    await delay(250)
     const draw = initialList[i]
 
     if(draw === wishFruit && !wishTriggered){
@@ -200,12 +201,14 @@ async function runMatchGame(initialDraws, wishFruit, logBox){
       wishBonusCount += 1
       bonusDraws += 1
       logLine(logBox, "初始第 " + (i+1) + " 抽 许愿命中 " + draw + " +1抽")
+      await delay(500);
     }
 
     if(indexOfUnpaired.has(draw)){
       pairCount += 1
       bonusDraws += 1
       logLine(logBox, "初始阶段 " + draw + " 和 " + draw + " 对对碰成功 +1抽")
+      await delay(500);
 
       const prevIdx = indexOfUnpaired.get(draw)
       activeCards.splice(prevIdx, 1)
@@ -230,7 +233,7 @@ async function runMatchGame(initialDraws, wishFruit, logBox){
 
     const draw = choice(FRUITS)
     logLine(logBox, "第 " + totalDraws + " 抽：抽到 " + draw)
-    await delay(250)
+    await delay(1000)
 
     const wishHitNow = (draw === wishFruit && !wishTriggered)
     const pairHitNow = indexOfUnpaired.has(draw)
@@ -239,7 +242,7 @@ async function runMatchGame(initialDraws, wishFruit, logBox){
     if(!pairHitNow) indexOfUnpaired.set(draw, activeCards.length - 1)
 
     logLine(logBox, listLine() + "｜剩余抽数 " + remainingDraws)
-    await delay(250)
+    await delay(1000)
 
     let anyEvent = false
 
@@ -249,7 +252,7 @@ async function runMatchGame(initialDraws, wishFruit, logBox){
       remainingDraws += 1
       anyEvent = true
       logLine(logBox, "→ 许愿命中 " + draw + " +1抽")
-      await delay(150)
+      await delay(500)
     }
 
     if(pairHitNow){
@@ -257,7 +260,7 @@ async function runMatchGame(initialDraws, wishFruit, logBox){
       remainingDraws += 1
       anyEvent = true
       logLine(logBox, "→ " + draw + " 和 " + draw + " 对对碰成功 +1抽")
-      await delay(150)
+      await delay(500)
 
       activeCards.pop()
       const prevIdx = indexOfUnpaired.get(draw)
@@ -267,7 +270,7 @@ async function runMatchGame(initialDraws, wishFruit, logBox){
 
     if(anyEvent){
       logLine(logBox, listLine() + "｜剩余抽数 " + remainingDraws)
-      await delay(250)
+      await delay(1000)
     }
   }
 
@@ -311,4 +314,5 @@ async function start(){
 
 initUI()
 el("startBtn").addEventListener("click", start);
+
 
